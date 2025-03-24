@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.74a762ac.css",
+    "main.js": "/static/js/main.cdb7b16d.js",
+    "static/js/453.6ecc5873.chunk.js": "/static/js/453.6ecc5873.chunk.js",
+    "static/media/contact.png": "/static/media/contact.5cbc56e31d4d68f98789.png",
+    "static/media/backimg.png": "/static/media/backimg.52f9bf0fe47b0e4ae996.png",
+    "static/media/austril.jpeg": "/static/media/austril.104c162a1243590365ef.jpeg",
+    "static/media/abtboy.png": "/static/media/abtboy.aa29dabc472045c35bad.png",
+    "static/media/us.jpg": "/static/media/us.287686be00d55c53e3bc.jpg",
+    "static/media/usas.jpg": "/static/media/usas.b77b4f1e464a34c2ca97.jpg",
+    "static/media/canadaa.jpg": "/static/media/canadaa.e3ca5edeef1b2801b920.jpg",
+    "static/media/united-kingdom.jpg": "/static/media/united-kingdom.0e162f51a440819241bc.jpg",
+    "static/media/globes.png": "/static/media/globes.3d174726eb1e75842075.png",
+    "static/media/a.jpg": "/static/media/a.01e7f1e5c7d6b94819f7.jpg",
+    "static/media/fl.png": "/static/media/fl.a0b625274bb39b415097.png",
+    "static/media/loans.jpg": "/static/media/loans.373b4da738056a9f14e2.jpg",
+    "static/media/exam.jpg": "/static/media/exam.7f01400376acab4b6651.jpg",
+    "static/media/client.png": "/static/media/client.5d78a3fa364db264d869.png",
+    "static/media/DreamCourse.png": "/static/media/DreamCourse.22ffb2ed12d165a2cba4.png",
+    "static/media/l.png": "/static/media/l.9ff03737246ac6d9a3f4.png",
+    "static/media/testPrep.png": "/static/media/testPrep.1908589d45d316aefbfe.png",
+    "static/media/mobile.png": "/static/media/mobile.edac4a352c3fae765c3f.png",
+    "static/media/gmail.png": "/static/media/gmail.a2f2146f929409405da0.png",
+    "index.html": "/index.html",
+    "main.74a762ac.css.map": "/static/css/main.74a762ac.css.map",
+    "main.cdb7b16d.js.map": "/static/js/main.cdb7b16d.js.map",
+    "453.6ecc5873.chunk.js.map": "/static/js/453.6ecc5873.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74a762ac.css",
+    "static/js/main.cdb7b16d.js"
+  ]
+}
