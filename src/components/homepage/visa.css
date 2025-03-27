@@ -137,3 +137,110 @@
     margin-top: -470px;
     margin-left: 43%;
   }
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .sub h1 {
+    font-size: 24px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  .sub h1 {
+    font-size: 20px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visa-container {
+    padding: 20px 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .visa-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .visa-title {
+    font-size: 20px;
+  }
+
+  .visa-text {
+    font-size: 14px;
+  }
+
+  .visa-item {
+    font-size: 13px;
+  }
+
+  .visa-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .visa-box {
+    padding: 12px;
+  }
+
+  .visa-title {
+    font-size: 18px;
+  }
+
+  .visa-text {
+    font-size: 13px;
+  }
+
+  .visa-item {
+    font-size: 12px;
+  }
+
+  .visa-link {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+/* Hide Form Container in Mobile View */
+@media (max-width: 768px) {
+  .form-container {
+    display: none;
+  }
+}

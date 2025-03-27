@@ -10,6 +10,8 @@ const makeCall = () => {
 };
 
 function StudyLoans() {
+        const [showSidebar, setShowSidebar] = useState(false);
+    //   const [showDropdown, setShowDropdown] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -36,29 +38,81 @@ function StudyLoans() {
             {/* Navbar Section */}
             <div className='logsec'>
                 <img style={{ height: '60px', width: '200px', marginTop: '-10px', marginLeft: '70px' }} src={logo3} alt='lg' />
-                <img style={{ height: '100px', width: '330px', marginLeft: '300px', marginTop: '-10px' }} className='imgt' src={glob} alt='glb' />
-                <button onClick={makeCall} style={{ marginLeft: '460px', borderRadius: '20%' }}>Contact us</button>
+                <img style={{ height: '100px', width: '330px', marginLeft: '300px', marginTop: '-20px' }} className='imgt' src={glob} alt='glb' />
+                <button onClick={makeCall} style={{ marginLeft: '360px', borderRadius: '10%' }}>Contact us</button>
             </div>
 
-            <header className="header">
-                <nav className="custom-navbar">
-                    <ul className="nav-links">
-                        <li><Link to="/" className="home-button">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/studyloans">Study Loans</Link></li>
-                        <li><Link to="/englishtests">English Tests</Link></li>
-                        {/* <li><Link to="/blog">Blog</Link></li> */}
-                        <li><Link to="/contact">Contact Us</Link></li>
-                    </ul>
-                </nav>
-            </header>
+              <header className="header">
+                 <nav className="custom-navbar">
+                   {/* Hamburger Icon for Mobile */}
+                   <div className="hamburger" onClick={() => setShowSidebar(true)}>
+                     ☰ UNIMART
+                   </div>
+           
+                   {/* Desktop Navigation */}
+                   <ul className="nav-links">
+                     <li>
+                       <Link to="/" className="home-button">
+                         Home
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/about">About Us</Link>
+                     </li>
+                     <li>
+                       <Link to="/studyloans">Study Loans</Link>
+                     </li>
+                     <li>
+                       <Link to="/englishtests">English Tests</Link>
+                     </li>
+                     <li>
+                       <Link to="/contact">Contact Us</Link>
+                     </li>
+                   </ul>
+                 </nav>
+           
+                 {/* Sidebar for Mobile */}
+                 <div className={`sidebar ${showSidebar ? "show-sidebar" : ""}`}>
+                   {/* Close Button */}
+                   <div className="close-btn" onClick={() => setShowSidebar(false)}>
+                     ✖
+                   </div>
+                   <ul className="sidebar-links">
+                     <li>
+                       <Link to="/" onClick={() => setShowSidebar(false)}>
+                         Home
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/about" onClick={() => setShowSidebar(false)}>
+                         About Us
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/studyloans" onClick={() => setShowSidebar(false)}>
+                         Study Loans
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/englishtests" onClick={() => setShowSidebar(false)}>
+                         English Tests
+                       </Link>
+                     </li>
+           
+                   
+                     <li>
+                       <Link to="/contact" onClick={() => setShowSidebar(false)}>
+                         Contact Us
+                       </Link>
+                     </li>
+                   </ul>
+                 </div>
+               </header>
 
             {/* Page Content */}
             <div className='mainusa'>
                 <img style={{width:'130%'}} src={loan} alt='USA ' />
-
-            
-            </div>
+  </div>
             <div className="assessment-card">
                     <h2>Free Assessment</h2>
                     <p>Find out your options for visa by completing a free online assessment.</p>
@@ -101,10 +155,7 @@ function StudyLoans() {
 
     <img src={logo} alt="Unimart Logo" class="loggo"/>
     <p class="logo-text">( Australia Students Visa )</p>
-
-
-
-                    </div>
+ </div>
                     <div className='ad'>
             <div className='uscontt'>
 <h1>Overseas Education Loan</h1>

@@ -10,6 +10,8 @@ const makeCall = () => {
 };
 
 function StudyUK() {
+                const [showSidebar, setShowSidebar] = useState(false);
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -40,18 +42,72 @@ function StudyUK() {
                 <button onClick={makeCall} style={{ marginLeft: '460px', borderRadius: '20%' }}>Contact us</button>
             </div>
 
-            <header className="header">
-                <nav className="custom-navbar">
-                    <ul className="nav-links">
-                        <li><Link to="/" className="home-button">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/studyloans">Study Loans</Link></li>
-                        <li><Link to="/englishtests">English Tests</Link></li>
-                        {/* <li><Link to="/blog">Blog</Link></li> */}
-                        <li><Link to="/contact">Contact Us</Link></li>
-                    </ul>
-                </nav>
-            </header>
+          <header className="header">
+                                                          <nav className="custom-navbar">
+                                                            {/* Hamburger Icon for Mobile */}
+                                                            <div className="hamburger" onClick={() => setShowSidebar(true)}>
+                                                              ☰ UNIMART
+                                                            </div>
+                                                    
+                                                            {/* Desktop Navigation */}
+                                                            <ul className="nav-links">
+                                                              <li>
+                                                                <Link to="/" className="home-button">
+                                                                  Home
+                                                                </Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/about">About Us</Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/studyloans">Study Loans</Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/englishtests">English Tests</Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/contact">Contact Us</Link>
+                                                              </li>
+                                                            </ul>
+                                                          </nav>
+                                                    
+                                                          {/* Sidebar for Mobile */}
+                                                          <div className={`sidebar ${showSidebar ? "show-sidebar" : ""}`}>
+                                                            {/* Close Button */}
+                                                            <div className="close-btn" onClick={() => setShowSidebar(false)}>
+                                                              ✖
+                                                            </div>
+                                                            <ul className="sidebar-links">
+                                                              <li>
+                                                                <Link to="/" onClick={() => setShowSidebar(false)}>
+                                                                  Home
+                                                                </Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/about" onClick={() => setShowSidebar(false)}>
+                                                                  About Us
+                                                                </Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/studyloans" onClick={() => setShowSidebar(false)}>
+                                                                  Study Loans
+                                                                </Link>
+                                                              </li>
+                                                              <li>
+                                                                <Link to="/englishtests" onClick={() => setShowSidebar(false)}>
+                                                                  English Tests
+                                                                </Link>
+                                                              </li>
+                                                    
+                                                            
+                                                              <li>
+                                                                <Link to="/contact" onClick={() => setShowSidebar(false)}>
+                                                                  Contact Us
+                                                                </Link>
+                                                              </li>
+                                                            </ul>
+                                                          </div>
+                                                        </header>
 
             {/* Page Content */}
             <div className='mainusa'>

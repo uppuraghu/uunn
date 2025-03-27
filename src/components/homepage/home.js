@@ -20,7 +20,9 @@ import land from '../images/client.png'
 import mail from '../images/gmail.png'
 import ConsultationForm from './consultfrm';
 import { FaWhatsapp } from "react-icons/fa";
-import StudyUSA from '../studyinabroad/studyUSA';
+
+
+// import StudyUSA from '../studyinabroad/studyUSA';
 
 
 const makeCall = () => {
@@ -29,9 +31,14 @@ const makeCall = () => {
 
 function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
-
+  const [showSidebar, setShowSidebar] = useState(false);
+ 
   return (
+    
+     
+   
     <div className="hmain">
+     
       {/* Marquee Section */}
       <div className="marquee-container">
         <div className="marquee-content">
@@ -59,35 +66,134 @@ function Home() {
      
 
       {/* Second Page Content */}
+     
+
+      
       <div className='pg2'>
+      <div className='xz'>
       <h2 className="hd2">
   Start Your Higher Education Journey with 
   <span className="highlight"> AbroadOptions Overseas Consultants</span> 
   and open yourself to a whole new world full of opportunities.
-</h2><br></br>
+</h2></div><br></br>
          {/* Navbar with Dropdown */}
          <header className="header">
       <nav className="custom-navbar">
+        {/* Hamburger Menu for Mobile */}
+        <div
+          className="hamburger"
+          onClick={() => setShowSidebar(!showSidebar)}
+        >
+          ☰ UNIMART
+        </div>
+
+        {/* Desktop Links */}
         <ul className="nav-links">
           <li className="dropdown">
             <button
               className="dropdown-btn"
               onClick={() => setShowDropdown(!showDropdown)}
             >
-              Study in Abroad  ↓  
+              Study in Abroad ↓
             </button>
             <ul className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
-              <li><Link to="/studyusa">Study in USA</Link></li>
-              <li><Link to="/studyuk">Study in UK</Link></li>
-              <li><Link to="/studycanada">Study in Canada</Link></li>
-              <li><Link to="/studyaustralia">Study in Australia</Link></li>
+              <li>
+                <Link to="/studyusa">Study in USA</Link>
+              </li>
+              <li>
+                <Link to="/studyuk">Study in UK</Link>
+              </li>
+              <li>
+                <Link to="/studycanada">Study in Canada</Link>
+              </li>
+              <li>
+                <Link to="/studyaustralia">Study in Australia</Link>
+              </li>
             </ul>
           </li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/studyloans">Study Loans</Link></li>
-          <li><Link to="/englishtests">English Tests</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/studyloans">Study Loans</Link>
+          </li>
+          <li>
+            <Link to="/englishtests">English Tests</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
         </ul>
+
+        {/* Sidebar for Mobile */}
+        <div className={`sidebar ${showSidebar ? "show-sidebar" : ""}`}>
+          {/* Close Button */}
+          <div
+            className="close-btn"
+            onClick={() => setShowSidebar(false)}
+          >
+            ✕
+          </div>
+
+          <ul className="sidebar-links">
+            <li className="dropdown">
+              <button
+                className="dropdown-btn"
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                Study in Abroad ↓
+              </button>
+              <ul className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
+                <li>
+                  <Link to="/studyusa" onClick={() => setShowSidebar(false)}>
+                    Study in USA
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/studyuk" onClick={() => setShowSidebar(false)}>
+                    Study in UK
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/studycanada"
+                    onClick={() => setShowSidebar(false)}
+                  >
+                    Study in Canada
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/studyaustralia"
+                    onClick={() => setShowSidebar(false)}
+                  >
+                    Study in Australia
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link to="/about" onClick={() => setShowSidebar(false)}>
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/studyloans" onClick={() => setShowSidebar(false)}>
+                Study Loans
+              </Link>
+            </li>
+            <li>
+              <Link to="/englishtests" onClick={() => setShowSidebar(false)}>
+                English Tests
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={() => setShowSidebar(false)}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -289,7 +395,9 @@ function Home() {
     </a>
 
       </div>
+    
     </div>
+   
   );
 }
 

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './study.css';
-import usa from '../images/usas.jpg';
 import { Link } from "react-router-dom"; 
 import logo3 from '../images/l.png';
 import glob from '../images/globes.png';
-import logo from '../images/uusa.png'
 import boy from '../images/abtboy.png'
 import CountUp from "react-countup";
 const makeCall = () => {
@@ -12,6 +10,8 @@ const makeCall = () => {
 };
 
 function StudyUSA() {
+    const [showSidebar, setShowSidebar] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -38,22 +38,76 @@ function StudyUSA() {
             {/* Navbar Section */}
             <div className='logsec'>
                 <img style={{ height: '60px', width: '200px', marginTop: '-10px', marginLeft: '70px' }} src={logo3} alt='lg' />
-                <img style={{ height: '100px', width: '330px', marginLeft: '300px', marginTop: '-10px' }} className='imgt' src={glob} alt='glb' />
-                <button onClick={makeCall} style={{ marginLeft: '460px', borderRadius: '20%' }}>Contact us</button>
+                <img style={{ height: '100px', width: '330px', marginLeft: '300px', marginTop: '-20px' }} className='imgt' src={glob} alt='glb' />
+                <button onClick={makeCall} style={{ marginLeft: '360px', borderRadius: '10%' }}>Contact us</button>
             </div>
 
             <header className="header">
-                <nav className="custom-navbar">
-                    <ul className="nav-links">
-                        <li><Link to="/" className="home-button">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/studyloans">Study Loans</Link></li>
-                        <li><Link to="/englishtests">English Tests</Link></li>
-                        {/* <li><Link to="/blog">Blog</Link></li> */}
-                        <li><Link to="/contact">Contact Us</Link></li>
-                    </ul>
-                </nav>
-            </header>
+      <nav className="custom-navbar">
+        {/* Hamburger Icon for Mobile */}
+        <div className="hamburger" onClick={() => setShowSidebar(true)}>
+          ☰ UNIMART
+        </div>
+
+        {/* Desktop Navigation */}
+        <ul className="nav-links">
+          <li>
+            <Link to="/" className="home-button">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/studyloans">Study Loans</Link>
+          </li>
+          <li>
+            <Link to="/englishtests">English Tests</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Sidebar for Mobile */}
+      <div className={`sidebar ${showSidebar ? "show-sidebar" : ""}`}>
+        {/* Close Button */}
+        <div className="close-btn" onClick={() => setShowSidebar(false)}>
+          ✖
+        </div>
+        <ul className="sidebar-links">
+          <li>
+            <Link to="/" onClick={() => setShowSidebar(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={() => setShowSidebar(false)}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/studyloans" onClick={() => setShowSidebar(false)}>
+              Study Loans
+            </Link>
+          </li>
+          <li>
+            <Link to="/englishtests" onClick={() => setShowSidebar(false)}>
+              English Tests
+            </Link>
+          </li>
+
+        
+          <li>
+            <Link to="/contact" onClick={() => setShowSidebar(false)}>
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </header>
 
           
          <div className='fle'>
@@ -90,7 +144,7 @@ function StudyUSA() {
       </h2>
       <p>Successful visas</p>
       </div>
-      <div className='cttt'> <h2>
+      <div className='cttt'> <h2>   
         <CountUp start={0} end={10} duration={3} separator="," />+
       </h2>
       <p>years of combined experience</p>
